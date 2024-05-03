@@ -76,7 +76,7 @@ const StudentEventDetail = () => {
             await axios
                 .post(`${apiUrl}/student/submitContribution/`+id, submited)
                 .then((res) => console.log(res));
-            window.location.reload()
+            navigate('/studentPage')
         } catch (error) {
             console.log(error);
         }
@@ -86,7 +86,7 @@ const StudentEventDetail = () => {
         try {
             if(window.confirm("Are you sure delete this?")){
                 const res = await axios.delete(`${apiUrl}/student/deleteContribution/`+i)
-                window.location.reload()
+                navigate('/studentPage')
             }
         } catch (error) {
             console.log(error)
