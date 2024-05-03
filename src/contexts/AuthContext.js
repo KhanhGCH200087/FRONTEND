@@ -77,7 +77,7 @@ const AuthContextProvider = ({children}) => {
             type: "SET_AUTH",
             payload: {isAuthenticated: false, user: null},
         });
-        window.location.href = LOCAL_URL + '/login';
+        // window.location.href = LOCAL_URL + '/login';
     };
 
     const authContextData = {loginUser, logoutUser, authState};
