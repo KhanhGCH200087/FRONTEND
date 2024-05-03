@@ -3,8 +3,6 @@ import {authReducer} from "../reducers/authReducer";
 import {apiUrl, LOCAL_STORAGE_TOKEN_NAME, LOCAL_URL} from "./constants";
 import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
-import { Navigate } from "react-router-dom";
-
 export const AuthContext = createContext();
 
 /**
@@ -78,7 +76,6 @@ const AuthContextProvider = ({children}) => {
             type: "SET_AUTH",
             payload: {isAuthenticated: false, user: null},
         });
-        <Navigate to="/login" />
     };
 
     const authContextData = {loginUser, logoutUser, authState};

@@ -1,12 +1,16 @@
 import {LogOut, User} from "lucide-react";
 import styles from "./header.module.css";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useContext} from "react";
 import {AuthContext} from "../../contexts/AuthContext";
 
 const Header = () => {
     const {logoutUser} = useContext(AuthContext);
-    const logOut = () => logoutUser()
+    const navigate = useNavigate()
+    const logOut = () => {
+        logoutUser()
+        navigate('/login')
+    }
     return (
         <div className={styles.header}>
             <div className={styles.header_button}>
