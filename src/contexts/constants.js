@@ -1,5 +1,5 @@
-export const apiUrl = 'http://localhost:4000'
+export const apiUrl = 'https://backend-hww2.onrender.com'
 
-export const LOCAL_URL = 'http://localhost:3000'
+export const LOCAL_URL = 'https://backend-hww2.onrender.com'
 
 export const LOCAL_STORAGE_TOKEN_NAME = 'test'
