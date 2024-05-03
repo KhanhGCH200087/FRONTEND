@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { apiUrl } from '../../contexts/constants'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 
@@ -68,6 +68,7 @@ const StudentEventDetail = () => {
     }
     // console.log(submited)
 
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -75,7 +76,7 @@ const StudentEventDetail = () => {
             await axios
                 .post(`${apiUrl}/student/submitContribution/`+id, submited)
                 .then((res) => console.log(res));
-            window.location.reload()
+            navigate('/studentPage')
         } catch (error) {
             console.log(error);
         }
