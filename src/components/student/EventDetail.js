@@ -76,7 +76,7 @@ const StudentEventDetail = () => {
             await axios
                 .post(`${apiUrl}/student/submitContribution/`+id, submited)
                 .then((res) => console.log(res));
-            navigate('/studentPage')
+            window.location.reload()
         } catch (error) {
             console.log(error);
         }
